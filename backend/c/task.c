@@ -157,9 +157,8 @@ int calculateTotalSize(struct File *files, int numFiles, int index) {
 }
 
 int largestFileSize(struct File *files, int numFiles) {
-	// iterate through the files
-	// follow the path to each parent
-	// get the total size and stop when parent is -1
+	// iterate through the files recursively
+	// to obtain path with largest size
 	if (numFiles == 0)
 		return 0;
 
