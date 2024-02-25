@@ -128,6 +128,14 @@ char **kLargestCategories(struct File *files, int numFiles, int k, int *numRetur
 	for (int i = 0; i < k; i++) {
 		returnedCategories[i] = strdup(categories[i]->category);
 	}
+
+	for (int i = 0; i < numCategories; i++) {
+		free(categories[i]->category);
+		free(categories[i]);
+	}
+
+	free(categories);
+
 	return returnedCategories;
 }
 
